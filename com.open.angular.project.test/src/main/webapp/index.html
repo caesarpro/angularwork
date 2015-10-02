@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>WELCOME</title>
+</head>
+<body ng-app="MonApp">
+
+<div ng-view></div>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular-animate.min.js"></script>
+   	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular-route.min.js"></script>
+	
+	<script type="text/javascript">
+	
+	var app = angular.module('MonApp',['ngRoute']);
+	app.config(function($routeProvider){
+		$routeProvider
+		.when('/',{templateUrl:'partials/home.html'})
+		.when('/comments',{templateUrl:'partials/comments.html',controller:'CommentsCtrl'})
+		.otherwise({redirectTo:'/'});
+	});
+	
+	app.controller('PostsCtrl', function($scope){
+		
+	});
+	app.controller('CommentsCtrl',	function ($scope) {
+			console.log($scope);
+			$scope.comments = [
+					{
+						"username" : "Fawzi",
+						"city" : "Tizi",
+						"email" : "fs@gmail.com",
+						"content" : "Deserunt commodo qui consequat ullamco deserunt do commodo irure ut labore. Qui et enim quis sit sit dolor."
+					},
+					{
+						"username" : "halim",
+						"city" : "Bougie",
+						"email" : "hs@gmail.com",
+						"content" : "Incididunt laboris Lorem laborum non adipisicing nisi non et pariatur mollit exercitation consequat consequat."
+					},
+					{
+						"username" : "fateh",
+						"city" : "Alger",
+						"email" : "fg@gmail.com",
+						"content" : "Irure cillum anim proident pariatur dolor voluptate ex voluptate."
+					},
+					{
+						"username" : "malik",
+						"city" : "Boumerdes",
+						"email" : "mg@gmail.com",
+						"content" : "Enim anim pariatur est deserunt nostrud ullamco duis sunt consectetur ipsum pariatur aliqua id id."
+					},
+					{
+						"username" : "Moustapha",
+						"city" : "Oran",
+						"email" : "mm@gmail.com",
+						"content" : "Occaecat irure quis eiusmod culpa."
+					},
+					{
+						"username" : "Amine",
+						"city" : "Oran",
+						"email" : "amine@gmail.com",
+						"content" : "Nulla minim ad amet tempor cillum sint reprehenderit. Anim consectetur minim consequat ut in exercitation exercitation. Occaecat laborum ut laboris aliquip aute Lorem. Cillum nisi irure non ut anim dolor excepteur commodo id amet velit reprehenderit reprehenderit irure. Ut culpa est qui exercitation nulla esse elit."
+					} ];
+
+		});
+	</script>
+
+</body>
+</html>
